@@ -10,7 +10,7 @@ const defaults = {
   export: 'ogg,m4a,mp3,ac3',
   format: null,
   autoplay: null,
-  loop: [],
+  loop: "",
   silence: 0,
   gap: 1,
   minlength: 0,
@@ -150,7 +150,7 @@ module.exports = function(files) {
       json.spritemap[name] = {
         start: offsetCursor
         , end: offsetCursor + duration
-        , loop: name === opts.autoplay || opts.loop.indexOf(name) !== -1
+        , loop: name === opts.autoplay || new RegExp("opts.loop").match(name)
       }
       offsetCursor += originalDuration
 
