@@ -117,7 +117,7 @@ opts.minlength = parseFloat(argv.minlength)
 opts.vbr = parseInt(argv.vbr, 10)
 opts['vbr:vorbis'] = parseInt(argv['vbr:vorbis'], 10)
 
-opts.loop = argv.loop ? [].concat(argv.loop) : []
+opts.loop = argv.loop
 
 opts.ignorerounding = parseInt(argv.ignorerounding, 0)
 
