@@ -152,7 +152,7 @@ module.exports = function(files) {
       json.spritemap[name] = {
         start: offsetCursor
         , end: offsetCursor + duration
-        , loop: name === opts.autoplay || regEx.exec(name)
+        , loop: name === opts.autoplay || !!regEx.exec(name)
       }
       offsetCursor += originalDuration
 
