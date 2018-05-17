@@ -147,10 +147,12 @@ module.exports = function(files) {
       opts.logger.info('File added OK', { file: src, duration: originalDuration })
       var extraDuration = Math.max(0, opts.minlength - originalDuration)
       var duration = originalDuration + extraDuration
+      var regexParams = opts.loop.split("/");
+      var regEx = new RegExp(regexParams[0], regexParams[1]); 
       json.spritemap[name] = {
         start: offsetCursor
         , end: offsetCursor + duration
-        , loop: name === opts.autoplay || new RegExp("opts.loop").match(name)
+        , loop: name === opts.autoplay || regEx.exec(name)
       }
       offsetCursor += originalDuration
 
